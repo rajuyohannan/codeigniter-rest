@@ -12,6 +12,25 @@ CodeIgniter 3 RESTful API Controller
 [![Latest Unstable Version](https://poser.pugx.org/yidas/codeigniter-rest/v/unstable?format=flat-square)](https://packagist.org/packages/yidas/codeigniter-rest)
 [![License](https://poser.pugx.org/yidas/codeigniter-rest/license?format=flat-square)](https://packagist.org/packages/yidas/codeigniter-rest)
 
+---
+
+OUTLINE
+-------
+
+- [Demonstration](#demonstration)
+    - [RESTful Create Callback](#restful-create-callback)
+    - [Packed Standard Format](#packed-standard-format)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+    - [Routes Setting](#routes-setting)
+- [Resource Controllers](#resource-controllers)
+    - [Build Methods](#build-methods)
+    - [Custom Routes & Methods](#custom-routes--methods)
+    - [Usage](#usage)
+- [HTTP Request](#http-request)
+    - [Usage](#usage-1)
+- [Reference](#reference)
 
 ---
 
