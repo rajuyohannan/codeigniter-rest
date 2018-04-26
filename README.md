@@ -30,6 +30,8 @@ OUTLINE
     - [Usage](#usage)
 - [HTTP Request](#http-request)
     - [Usage](#usage-1)
+- [HTTP Response](#http-response)
+    - [Usage](#usage-2)
 - [Reference](#reference)
 
 ---
