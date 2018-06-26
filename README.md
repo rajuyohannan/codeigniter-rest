@@ -149,21 +149,19 @@ https://yourname.com/resources
 https://yourname.com/resources/123
 ```
 
-You could add a pair of routes for this controller into `\application\config\routes.php` to enable RESTful API methods:
+You could add a pair of routes for this controller into `\application\config\routes.php` to enable RESTful API url:
 
 ```php
 $route['resource_name'] = '[Controller]/route';
 $route['resource_name/(:num)'] = '[Controller]/route/$1';
 ```
 
-> You don't need set routes if you just use `index` method of the controller.
-
 ---
 
 RESOURCE CONTROLLERS
 --------------------
  
-The base RESTful API controller is `yidas\rest\Controller`, the following table is the actions handled by resource controller, the `action` is the `CI_Controller`'s action name which you could override to open it:
+The base RESTful API controller is `yidas\rest\Controller`, the following table is the actions handled by resource controller, the `action` refers to `CI_Controller`'s action name which you could override:
 
 |HTTP Method|URI            |Action   |Description                                    |
 |:----------|:--------------|:--------|:----------------------------------------------|
@@ -179,7 +177,7 @@ The base RESTful API controller is `yidas\rest\Controller`, the following table 
 
 You could make a resource controller by referring the [Template of Resource Controller](https://github.com/yidas/codeigniter-rest/blob/dev/examples/RestController.php).
 
-The following methods with arguments could be add when you need to defind response and open it:
+The following RESTful controller methods could be add by your need. which each method refers to the action of Resource Controller table by default, and injects required arguments:
 
 ```php
 public function index() {}
@@ -189,13 +187,13 @@ protected function update($resourceID, $requestData=null) {}
 protected function delete($resourceID=null) {}
 ```
 
-> `$requestData` is the raw body from request
+> `$requestData` (array) is the raw body from request
 > 
-> `$resourceID` is the addressed identity of the resource from request
+> `$resourceID` (string) is the addressed identity of the resource from request
 
 ### Custom Routes & Methods
 
-The default routing methods are below setting:
+The default routes for mapping the same action methods of Resource Controller are below:
 
 ```php
 protected $routes = [
@@ -207,7 +205,7 @@ protected $routes = [
 ];
 ```
 
-You could override to defind your own routing while creating a resource controller:
+You could override it to define your own routes while creating a resource controller:
 
 ```php
 class ApiController extends yidas\rest\Controller {
@@ -222,9 +220,9 @@ class ApiController extends yidas\rest\Controller {
 }
 ```
 
-> The keys are refered to Action of Resource Controller table, you must define all routes you need. 
->
-> For example: REST list `index` action will run `find` method.
+After reset routes, each RESTful method (key) would enter into specified controller action (value). For above example, while access `/resources/ajax/` url with `GET` method would enter into `find()` action. However, the default route would enter into `index()` action.
+
+> The keys refer to the actions of Resource Controller table, you must define all methods you need. 
 
 
 ### Usage
