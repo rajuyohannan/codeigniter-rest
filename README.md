@@ -220,7 +220,7 @@ class ApiController extends yidas\rest\Controller {
 }
 ```
 
-After reset routes, each RESTful method (key) would enter into specified controller action (value). For above example, while access `/resources/ajax/` url with `GET` method would enter into `find()` action. However, the default route would enter into `index()` action.
+After reseting routes, each RESTful method (key) would enter into specified controller action (value). For above example, while access `/resources/ajax/` url with `GET` method would enter into `find()` action. However, the default route would enter into `index()` action.
 
 > The keys refer to the actions of Resource Controller table, you must define all methods you need. 
 
