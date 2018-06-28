@@ -58,7 +58,7 @@ Output with status `200 OK`:
 ### RESTful Create Callback
 
 ```php
-public function store($resourceID, $requestData=null) {
+public function store($requestData=null) {
 
     $this->db->insert('mytable', $requestData);
     $id = $this->db->insert_id();
