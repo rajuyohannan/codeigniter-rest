@@ -193,7 +193,7 @@ class Controller extends \CI_Controller
      * 
      * You could override this method for your application standard
      * 
-     * @param array|string $data Original data
+     * @param array|mixed $data Original data
      * @param int HTTP Status Code
      * @param string Callback message
      * @return array Packed data
